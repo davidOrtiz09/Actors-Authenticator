@@ -9,6 +9,7 @@ object Versions {
    val slfjVersion = "1.6.4"
    val hikariVersion = "3.2.0"
    val postgresVersion = "9.3-1100-jdbc4"
+  val typeSafeLoggerVersion = "3.5.0"
 
 
   //------------- TEST --------------

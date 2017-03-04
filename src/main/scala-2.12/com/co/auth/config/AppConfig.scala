@@ -9,8 +9,21 @@ import com.typesafe.config.{Config, ConfigFactory}
   */
 case class AppConfig(config: Config = ConfigFactory.load()) {
 
+
+  //------------------------------------------------
+  //                 AKKA CONFIGURATIONS
+  //------------------------------------------------
   private lazy val akkaConfig: Config = config.getConfig("akka-config")
-  lazy val akkaSystemName: String = akkaConfig.getString("system-name")
+          lazy val akkaSystemName: String = akkaConfig.getString("system-name")
+
+
+  //------------------------------------------------
+  //                   API CONFIGURATIONS
+  //------------------------------------------------
+  private lazy val apiServerConfig: Config = config.getConfig("api-config")
+          lazy val apiServerHost: String = apiServerConfig.getString("host")
+          lazy val apiServerPort: Int = apiServerConfig.getInt("port")
+
 
 
 }
