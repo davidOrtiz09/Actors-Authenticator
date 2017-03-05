@@ -25,6 +25,6 @@ case class WebServer() (implicit val system: ActorSystem, val appConfig: AppConf
 
   Http().bindAndHandle(routes, apiServerHost, apiServerPort)
 
-  logger.debug(s"Server online at http://$apiServerHost:$apiServerPort.....")
+  logger.info(s"Server online at http://$apiServerHost:$apiServerPort.....")
 
 }
