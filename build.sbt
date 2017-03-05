@@ -1,6 +1,6 @@
 import Dependencies._
 
-name := "Actors-Authenticator"
+name := "Reactive-chat"
 
 version := "1.0"
 
