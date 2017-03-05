@@ -1,7 +1,7 @@
-package com.co.auth.api.routes
+package com.co.chat.api.routes
 
 import akka.actor.ActorSystem
-import com.co.auth.config.AppConfig
+import com.co.chat.config.AppConfig
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 

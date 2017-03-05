@@ -1,6 +1,6 @@
-package com.co.auth.core
+package com.co.chat.core
 
-import com.co.auth.api.WebServer
+import com.co.chat.api.WebServer
 
 
 trait ApiCore {

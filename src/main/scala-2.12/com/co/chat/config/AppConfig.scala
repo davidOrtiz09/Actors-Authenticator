@@ -1,4 +1,4 @@
-package com.co.auth.config
+package com.co.chat.config
 
 import com.typesafe.config.{Config, ConfigFactory}
 
@@ -23,6 +23,15 @@ case class AppConfig(config: Config = ConfigFactory.load()) {
   private lazy val apiServerConfig: Config = config.getConfig("api-config")
           lazy val apiServerHost: String = apiServerConfig.getString("host")
           lazy val apiServerPort: Int = apiServerConfig.getInt("port")
+
+
+
+  //------------------------------------------------
+  //                   SLICK CONFIGURATIONS
+  //------------------------------------------------
+
+   lazy val postgreesConfig: Config = config.getConfig("postgrees-config")
+
 
 
 

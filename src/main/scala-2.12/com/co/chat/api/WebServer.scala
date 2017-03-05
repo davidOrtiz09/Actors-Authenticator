@@ -1,11 +1,11 @@
-package com.co.auth.api
+package com.co.chat.api
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Route
 import akka.stream.{ActorMaterializer, ActorMaterializerSettings}
-import com.co.auth.api.routes.ExampleRoute
-import com.co.auth.config.AppConfig
+import com.co.chat.api.routes.ExampleRoute
+import com.co.chat.config.AppConfig
 import com.typesafe.scalalogging.LazyLogging
 
 

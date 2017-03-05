@@ -1,7 +1,7 @@
-package com.co.auth.core
+package com.co.chat.core
 
 import akka.actor.ActorSystem
-import com.co.auth.config.AppConfig
+import com.co.chat.config.AppConfig
 
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
