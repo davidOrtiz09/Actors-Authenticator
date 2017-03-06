@@ -3,13 +3,19 @@ package com.co.chat.persistence.respository
 import com.co.chat.config.SlickDbConfig
 import com.co.chat.errors.PersistenceError
 import slick.jdbc.JdbcBackend
+import slick.lifted.TableQuery
 
 import scala.concurrent.{ExecutionContext, Future}
 
 /**
   * Slick generic repository configuration
+  * @tparam T: Table specific class
   */
-trait SlickRepository {
+trait SlickRepository[T <: slick.lifted.AbstractTable[_]] {
+
+
+
+protected val queryTable: TableQuery[T]
 
   /**
     * Execution context
@@ -28,15 +34,17 @@ trait SlickRepository {
     * Function that execute query code inside a slick session and is capable to handler execution errors
     *
     * @param query: Query code that execute in a slick session
-    * @tparam T : Data type executed for slick
+    * @tparam M : Data type executed for slick
     * @return
     */
-  protected def execute[T](query: JdbcBackend#Database => Future[T]): Future[T] = {
+  protected def execute[M](query: JdbcBackend#Database => Future[M]): Future[M] = {
     query(dbConfig.db).recoverWith {
       case e: PersistenceError => Future.failed(e)
       case e => Future.failed(PersistenceError(e))
     }(exCoDB)
   }
+
+
 
 
 

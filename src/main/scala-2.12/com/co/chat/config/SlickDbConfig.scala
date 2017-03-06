@@ -23,11 +23,11 @@ sealed trait SlickDbConfig {
 }
 
 
-case class PostgreesConfig(implicit appConfig: AppConfig) extends SlickDbConfig {
+case class PostgresConfig(implicit appConfig: AppConfig) extends SlickDbConfig {
 
 
   protected def configDefined: DatabaseConfig[PostgresProfile] = {
-    DatabaseConfig.forConfig[PostgresProfile]("",appConfig.postgreesConfig)
+    DatabaseConfig.forConfig[PostgresProfile]("",appConfig.postgresConfig)
   }
 }
 

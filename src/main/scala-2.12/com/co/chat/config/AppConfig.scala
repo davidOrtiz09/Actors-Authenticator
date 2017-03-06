@@ -30,7 +30,7 @@ case class AppConfig(config: Config = ConfigFactory.load()) {
   //                   SLICK CONFIGURATIONS
   //------------------------------------------------
 
-   lazy val postgreesConfig: Config = config.getConfig("postgrees-config")
+   lazy val postgresConfig: Config = config.getConfig("postgrees-config")
 
 
 

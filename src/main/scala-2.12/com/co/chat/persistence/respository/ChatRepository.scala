@@ -17,10 +17,9 @@ trait ChatRepository[DTO , ID] {
 
   def findAll(): Future[Seq[DTO]]
 
-  def update(dto: DTO): Future[Unit]
+  def update(dto: DTO): Future[Int]
 
-  def deleteByID(id: ID): Future[Unit]
-
+  def deleteByID(id: ID): Future[Int]
 
 
 }
